@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Bastion.Models.Compute;
+using MongoDB.Bson;
 
 namespace Bastion.Controllers
 {
@@ -20,9 +21,15 @@ namespace Bastion.Controllers
         }
 
         // GET: Configuration/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            if (String.IsNullOrEmpty(id))
+            {
+                return RedirectToAction("Index");
+            }
+
+            var configuration = Context.Configurations.FindOneById(new ObjectId(id));
+            return View(configuration);
         }
 
         // GET: Configuration/Create
@@ -48,19 +55,30 @@ namespace Bastion.Controllers
         }
 
         // GET: Configuration/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+            if (String.IsNullOrEmpty(id))
+            {
+                return RedirectToAction("Index");
+            }
+
+            var configuration = Context.Configurations.FindOneById(new ObjectId(id));
+            return View(configuration);
         }
 
         // POST: Configuration/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(string id, ComputeConfiguration config)
         {
+            if (String.IsNullOrEmpty(id))
+            {
+                return RedirectToAction("Index");
+            }
+
             try
             {
-                // TODO: Add update logic here
-
+                config.Id = new ObjectId(id);
+                Context.Configurations.Save(config);
                 return RedirectToAction("Index");
             }
             catch

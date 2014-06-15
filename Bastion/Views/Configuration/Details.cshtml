@@ -1,0 +1,555 @@
+﻿@model Bastion.Models.Compute.ComputeConfiguration
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Config Description</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    <h4>Marshalling</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Marshalling.SerializeFormat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marshalling.SerializeFormat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marshalling.DeserializeFormat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marshalling.DeserializeFormat)
+        </dd>
+
+    </dl>
+
+    <h4>User Auth Config</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserAuthConfig.Endpoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAuthConfig.Endpoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserAuthConfig.Strategy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAuthConfig.Strategy)
+        </dd>
+
+    </dl>
+
+    <h4>Compute Admin Auth Config</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeAdminAuthConfig.Endpoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeAdminAuthConfig.Endpoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeAdminAuthConfig.Strategy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeAdminAuthConfig.Strategy)
+        </dd>
+
+    </dl>
+
+    <h4>ComputeEndpoint</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeEndpoint.Region)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeEndpoint.Region)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeEndpoint.ComputeEndpointName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeEndpoint.ComputeEndpointName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeEndpoint.ComputeEndpointUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeEndpoint.ComputeEndpointUrl)
+        </dd>
+
+    </dl>
+
+    <h4>ComputeAdminEndpoint</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeAdminEndpoint.Region)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeAdminEndpoint.Region)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeAdminEndpoint.ComputeEndpointName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeAdminEndpoint.ComputeEndpointName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeAdminEndpoint.ComputeEndpointUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeAdminEndpoint.ComputeEndpointUrl)
+        </dd>
+
+    </dl>
+
+    <h4>ComputeService</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Compute.Hypervisor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compute.Hypervisor)
+        </dd>
+
+    </dl>
+
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.ApiKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.ApiKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.TenantId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.TenantId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.UserId)
+        </dd>
+
+    </dl>
+
+    <h4>ComputeAdminUser</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeAdminUser.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeAdminUser.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeAdminUser.ApiKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeAdminUser.ApiKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeAdminUser.TenantId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeAdminUser.TenantId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeAdminUser.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeAdminUser.UserId)
+        </dd>
+
+    </dl>
+
+    <h4>ComputeSecondaryUser</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeSecondaryUser.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeSecondaryUser.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeSecondaryUser.ApiKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeSecondaryUser.ApiKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeSecondaryUser.TenantId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeSecondaryUser.TenantId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputeSecondaryUser.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputeSecondaryUser.UserId)
+        </dd>
+
+    </dl>
+
+    <h4>Flavors</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Flavors.PrimaryFlavor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flavors.PrimaryFlavor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flavors.SecondaryFlavor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flavors.SecondaryFlavor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flavors.ResizeEnabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flavors.ResizeEnabled)
+        </dd>
+
+    </dl>
+
+    <h4>Images</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Images.PrimaryImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Images.PrimaryImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Images.PrimaryImageDefaultUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Images.PrimaryImageDefaultUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Images.PrimaryImageHasProtectedProperties)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Images.PrimaryImageHasProtectedProperties)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Images.PrimaryImagePathSeparator)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Images.PrimaryImagePathSeparator)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Images.SecondaryImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Images.SecondaryImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Images.ImageStatusInterval)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Images.ImageStatusInterval)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Images.SnapshotTimeout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Images.SnapshotTimeout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Images.NonInheritedMetadataFilePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Images.NonInheritedMetadataFilePath)
+        </dd>
+
+    </dl>
+
+    <h4>Servers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.InstanceAuthStrategy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.InstanceAuthStrategy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.ServerStatusInterval)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.ServerStatusInterval)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.ServerBuildTimeout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.ServerBuildTimeout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.ServerResizeTimeout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.ServerResizeTimeout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.NetworkForSSH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.NetworkForSSH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.IPAddressVersionForSSH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.IPAddressVersionForSSH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.InstanceDiskPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.InstanceDiskPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.ConnectionRetryInterval)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.ConnectionRetryInterval)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.ExpectedNetworks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.ExpectedNetworks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.SplitEphemeralDiskEnabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.SplitEphemeralDiskEnabled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.DiskFormatType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.DiskFormatType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.PersonalityFileInjectionEnabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.PersonalityFileInjectionEnabled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.EphemeralDiskMaxSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.EphemeralDiskMaxSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.DefaultInjectedFiles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.DefaultInjectedFiles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.DefaultFilePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.DefaultFilePath)
+        </dd>
+
+    </dl>
+
+    <h4>ConfigDrive</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigDrive.OpenStackMetaPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigDrive.OpenStackMetaPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigDrive.EcMetaPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigDrive.EcMetaPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigDrive.BasePathToMount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigDrive.BasePathToMount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigDrive.MountSourcePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigDrive.MountSourcePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigDrive.MinSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigDrive.MinSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigDrive.MaxSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigDrive.MaxSize)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.Id  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
