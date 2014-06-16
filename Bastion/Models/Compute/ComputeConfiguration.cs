@@ -6,6 +6,7 @@ using Bastion.Models.Common;
 using Bastion.Models.Identity;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
+using System.ComponentModel;
 
 namespace Bastion.Models.Compute
 {
@@ -13,7 +14,7 @@ namespace Bastion.Models.Compute
     {
         public ComputeConfiguration()
         {
-            /*Marshalling = new Marshalling();
+            Marshalling = new Marshalling();
             UserAuthConfig = new IdentityEndpointConfiguration();
             ComputeAdminAuthConfig = new IdentityEndpointConfiguration();
             ComputeEndpoint = new ComputeEndpoint();
@@ -25,7 +26,7 @@ namespace Bastion.Models.Compute
             Flavors = new Flavors();
             Images = new Images();
             Servers = new Servers();
-            ConfigDrive = new ConfigDrive();*/
+            ConfigDrive = new ConfigDrive();
         }
 
         public ObjectId Id { get; set; }

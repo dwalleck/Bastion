@@ -91,7 +91,7 @@
 
     </dl>
 
-    <h4>ComputeEndpoint</h4>
+    <h4>Compute Endpoint</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -120,7 +120,7 @@
 
     </dl>
 
-    <h4>ComputeAdminEndpoint</h4>
+    <h4>Compute Admin Endpoint</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -149,7 +149,7 @@
 
     </dl>
 
-    <h4>ComputeService</h4>
+    <h4>Compute Service</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -199,7 +199,7 @@
 
     </dl>
 
-    <h4>ComputeAdminUser</h4>
+    <h4>Compute Admin User</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -236,7 +236,7 @@
 
     </dl>
 
-    <h4>ComputeSecondaryUser</h4>
+    <h4>Compute Secondary User</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -436,6 +436,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.Servers.ConnectionRetryInterval)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.ConnectionTimeout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.ConnectionTimeout)
         </dd>
 
         <dt>
