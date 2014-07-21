@@ -5,6 +5,7 @@ using System.Web;
 using MongoDB.Driver;
 using Bastion.Properties;
 using Bastion.Models.Compute;
+using Bastion.Models.Reaper;
 
 namespace Bastion
 {
@@ -24,6 +25,14 @@ namespace Bastion
             get
             {
                 return Database.GetCollection<ComputeConfiguration>("configs");
+            }
+        }
+
+        public MongoCollection<Account> Accounts
+        {
+            get
+            {
+                return Database.GetCollection<Account>("accounts");
             }
         }
     }
