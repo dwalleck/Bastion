@@ -11,6 +11,7 @@ namespace Bastion.Models.Reaper
         public int Ram { get; set; }
         public int Disk { get; set; }
         public int Images { get; set; }
-        public int ImagesDisk { get; set; }
+        public long ImagesDisk { get; set; }
+        public int VCPUs { get; set; }
     }
 }

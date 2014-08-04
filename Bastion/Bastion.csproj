@@ -133,6 +133,7 @@
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\ConfigurationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReaperController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -204,6 +205,8 @@
     <Content Include="Views\Configuration\Edit.cshtml" />
     <Content Include="Views\Accounts\Index.cshtml" />
     <Content Include="Views\Accounts\Create.cshtml" />
+    <Content Include="Views\Reaper\Index.cshtml" />
+    <Content Include="Views\Reaper\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
