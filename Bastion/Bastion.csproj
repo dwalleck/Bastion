@@ -144,6 +144,7 @@
     <Compile Include="Models\Compute\ConfigDrive.cs" />
     <Compile Include="Models\Compute\Flavors.cs" />
     <Compile Include="Models\Compute\Images.cs" />
+    <Compile Include="Models\Compute\SecurityGroups.cs" />
     <Compile Include="Models\Compute\Servers.cs" />
     <Compile Include="Models\Identity\IdentityEndpointConfiguration.cs" />
     <Compile Include="Models\Identity\UserConfiguration.cs" />

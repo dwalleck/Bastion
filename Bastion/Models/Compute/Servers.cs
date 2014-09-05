@@ -72,5 +72,13 @@ namespace Bastion.Models.Compute
         [DisplayName("Default File Path")]
         [BsonElement("default_file_path")]
         public string DefaultFilePath { get; set; }
+
+        [DisplayName("Keep Resources On Failure?")]
+        [BsonElement("keep_resources_on_failure")]
+        public bool KeepResourcesOnFailure { get; set; }
+
+        [DisplayName("Default Scheduler Hints")]
+        [BsonElement("default_scheduler_hints")]
+        public string DefaultSchedulerHints { get; set; }
     }
 }

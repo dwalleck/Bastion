@@ -40,5 +40,13 @@ namespace Bastion.Models.Compute
         [DisplayName("Non-Inherited Metadata File Path")]
         [BsonElement("non_inherited_metadata_filepath")]
         public string NonInheritedMetadataFilePath { get; set; }
+
+        [DisplayName("Can Get Deleted Image?")]
+        [BsonElement("can_get_deleted_image")]
+        public bool CanGetDeletedImage { get; set; }
+
+        [DisplayName("Primary Image Default Device")]
+        [BsonElement("primary_image_default_device")]
+        public string PrimaryImageDefaultDevice { get; set; }
     }
 }

@@ -27,6 +27,7 @@ namespace Bastion.Models.Compute
             Images = new Images();
             Servers = new Servers();
             ConfigDrive = new ConfigDrive();
+            SecurityGroups = new SecurityGroups();
         }
 
         public ObjectId Id { get; set; }
@@ -75,5 +76,8 @@ namespace Bastion.Models.Compute
 
         [BsonElement("config_drive")]
         public ConfigDrive ConfigDrive { get; set; }
+
+        [BsonElement("security_groups")]
+        public SecurityGroups SecurityGroups { get; set; }
     }
 }

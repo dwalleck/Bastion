@@ -369,6 +369,22 @@
             @Html.DisplayFor(model => model.Images.NonInheritedMetadataFilePath)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Images.CanGetDeletedImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Images.CanGetDeletedImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Images.PrimaryImageDefaultDevice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Images.PrimaryImageDefaultDevice)
+        </dd>
+
     </dl>
 
     <h4>Servers</h4>
@@ -502,9 +518,37 @@
             @Html.DisplayFor(model => model.Servers.DefaultFilePath)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.KeepResourcesOnFailure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.KeepResourcesOnFailure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.DefaultSchedulerHints)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.DefaultSchedulerHints)
+        </dd>
+
     </dl>
 
-    <h4>ConfigDrive</h4>
+    <h4>Security Groups</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SecurityGroups.DefaultSecurityGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecurityGroups.DefaultSecurityGroup)
+        </dd>
+    </dl>
+
+    <h4>Config Drive</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
