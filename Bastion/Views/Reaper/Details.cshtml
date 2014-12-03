@@ -1,7 +1,7 @@
 ﻿@model Bastion.Models.Reaper.Account
 
 <div>
-    <h4>@Html.DisplayFor(model => model.Username)</h4>
+    <h2>Usage for @Html.DisplayFor(model => model.Username)</h2>
     <hr />
     <div class="row">
         <div class="col-md-4">
@@ -10,7 +10,9 @@
                     <h3 class="panel-title">Compute</h3>
                 </div>
                 <div class="panel-body">
-                   
+                    @DisplayUsage("Servers", @Model.Usage.Compute.Instances)
+                    @DisplayUsage("RAM (MB)", @Model.Usage.Compute.Ram)
+                    @DisplayUsage("Disk Used (GB)", @Model.Usage.Compute.Disk)
                 </div>
             </div>
         </div>
@@ -20,7 +22,8 @@
                     <h3 class="panel-title">Block Storage</h3>
                 </div>
                 <div class="panel-body">
-
+                    @DisplayUsage("Volumes", @Model.Usage.BlockStorage.Volumes)
+                    @DisplayUsage("Disk Used (GB)", @Model.Usage.BlockStorage.DiskUsed)
                 </div>
             </div>
         </div>
@@ -37,19 +40,22 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Load Balancers</h3>
+                    <h3 class="panel-title">Images</h3>
                 </div>
                 <div class="panel-body">
-
+                    @DisplayUsage("Images", @Model.Usage.Compute.Images)
+                    @DisplayUsage("Disk Used (MB)", @Model.Usage.Compute.ImagesDisk)
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Databases</h3>
+                    <h3 class="panel-title">Networks</h3>
                 </div>
-
+                <div class="panel-body">
+                    @DisplayUsage("Networks", @Model.Usage.Networks.Networks)
+                </div>
             </div>
         </div>
     </div>
@@ -57,3 +63,21 @@
 <p>
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+@helper DisplayUsage(string title, long count){
+    <div class="progress-stat">
+        <div class="stat-header">
+            <div class="stat-label">
+                @title
+            </div>
+            <div class="stat-value">
+                @count
+            </div>
+        </div>
+        <div class="progress progress-striped active">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@count"
+                 aria-valuemin="0" aria-valuemax="100" style="width: @(count)%">
+            </div>
+        </div>
+    </div>
+}

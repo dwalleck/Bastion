@@ -6,6 +6,8 @@ using MongoDB.Driver;
 using Bastion.Properties;
 using Bastion.Models.Compute;
 using Bastion.Models.Reaper;
+using Bastion.Models.Images;
+using Bastion.Models.BuildResults;
 
 namespace Bastion
 {
@@ -33,6 +35,22 @@ namespace Bastion
             get
             {
                 return Database.GetCollection<Account>("accounts");
+            }
+        }
+
+        public MongoCollection<Image> Images
+        {
+            get
+            {
+                return Database.GetCollection<Image>("images");
+            }
+        }
+
+        public MongoCollection<BuildActionResults> Results
+        {
+            get
+            {
+                return Database.GetCollection<BuildActionResults>("results");
             }
         }
     }

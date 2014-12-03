@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Bastion.Models.BuildResults.BuildActionResults>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Region)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endpoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfServers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AverageTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalRunTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SuccessRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Timeouts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServerErrors)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Region)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endpoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfServers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AverageTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalRunTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SuccessRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Timeouts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServerErrors)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

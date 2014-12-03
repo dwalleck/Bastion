@@ -6,16 +6,22 @@
             @Html.DisplayNameFor(model => model.Username)
         </th>
         <th>
-            Instances
+            @Html.DisplayNameFor(model => model.TenantId)
         </th>
         <th>
-            CPUs
+            Compute
         </th>
         <th>
-            Ram
+            Images
         </th>
         <th>
-            Disk
+            Block Storage
+        </th>
+        <th>
+            Networks
+        </th>
+        <th>
+            Object Storage
         </th>
     </tr>
 
@@ -23,24 +29,48 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Username)
+                @Html.ActionLink(item.Username, "Details", new { id = item.Id }) 
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Usage.Compute.Instances)
+                @Html.DisplayFor(modelItem => item.TenantId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Usage.Compute.VCPUs)
+                @ShowUsageStatus(@item.Usage.Compute.CurrentUsageStatus().ToString())
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Usage.Compute.Ram)
+                @ShowUsageStatus(@item.Usage.Images.CurrentUsageStatus().ToString())
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Usage.Compute.Disk)
+                @ShowUsageStatus(@item.Usage.BlockStorage.CurrentUsageStatus().ToString())
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) 
+                @ShowUsageStatus(@item.Usage.Networks.CurrentUsageStatus().ToString())
+            </td>
+            <td>
+                <span class="label label-info">N/A</span>
             </td>
         </tr>
     }
 
 </table>
+
+@helper ShowUsageStatus(string status)
+{
+    if (status == "Ok")
+    {
+        <span class="label label-success">OK</span>
+    }
+    else if (status == "Warning")
+    {
+        <span class="label label-warning">Warning</span>
+    }
+    else if (status == "OverLimit")
+    {
+        <span class="label label-danger">Over Limit</span>
+    }
+    else
+    {
+        <span class="label label-default">Unknown</span>
+    }
+
+}
