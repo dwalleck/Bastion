@@ -8,6 +8,7 @@ using Bastion.Models.Compute;
 using Bastion.Models.Reaper;
 using Bastion.Models.Images;
 using Bastion.Models.BuildResults;
+using Bastion.Models.CafeReporting;
 
 namespace Bastion
 {
@@ -53,5 +54,25 @@ namespace Bastion
                 return Database.GetCollection<BuildActionResults>("results");
             }
         }
+    }
+
+    public class CafeContext
+    {
+        public MongoDatabase Database;
+
+        public CafeContext()
+        {
+            var client = new MongoClient(Settings.Default.BastionConnectionString);
+            MongoServer server = client.GetServer();
+            Database = server.GetDatabase(Settings.Default.CafeDatabaseName);
+        }
+
+        public MongoCollection<ComputeContext> ComputeContexts
+        {
+            get
+            {
+                return Database.GetCollection<ComputeContext>("compute");
+            }
+        }   
     }
 }

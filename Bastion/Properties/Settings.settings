@@ -12,5 +12,8 @@
     <Setting Name="BastionDatabaseName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">bastion</Value>
     </Setting>
+    <Setting Name="CafeDatabaseName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CC_REPORTER</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

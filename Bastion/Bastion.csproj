@@ -132,6 +132,7 @@
     <Compile Include="BastionContext.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\BuildResultsController.cs" />
+    <Compile Include="Controllers\CafeResultsController.cs" />
     <Compile Include="Controllers\ConfigurationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
@@ -140,6 +141,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BuildResults\BuildResults.cs" />
+    <Compile Include="Models\CafeReporting\ComputeContext.cs" />
     <Compile Include="Models\Common\Marshalling.cs" />
     <Compile Include="Models\Compute\ComputeConfiguration.cs" />
     <Compile Include="Models\Compute\ComputeEndpoint.cs" />
@@ -175,6 +177,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\Default Settings %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\rack.pubxml" />
     <None Include="Properties\Settings.settings">
@@ -221,6 +224,7 @@
     <Content Include="Views\Reaper\Details.cshtml" />
     <Content Include="Views\Images\Index.cshtml" />
     <Content Include="Views\BuildResults\Index.cshtml" />
+    <Content Include="Views\CafeResults\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

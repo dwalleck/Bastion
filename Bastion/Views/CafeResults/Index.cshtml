@@ -1,0 +1,184 @@
+﻿@model IEnumerable<Bastion.Models.CafeReporting.ComputeContext>
+
+<!-- <p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.parent_uuid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.request_params)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.logfile_stop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.result)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.context_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.test_uuid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.baseline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.request_body)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.logfile_start)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._stop_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.elapsed_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.method)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.response_headers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._start_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.context_uuid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.logfile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rollup_result)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.response_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.context_type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.parent_uuid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.request_params)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.logfile_stop)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.result)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.context_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.test_uuid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.baseline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.request_body)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.logfile_start)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._stop_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.elapsed_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.method)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.response_headers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._start_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.context_uuid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.logfile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rollup_result)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.url)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.response_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.context_type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
+-->
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+@foreach (var item in Model) {
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading-@item.Id">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-@item.Id" aria-expanded="true" aria-controls="collapse-@item.Id">
+                    @Html.DisplayFor(modelItem => item.context_type)-@Html.DisplayFor(modelItem => item.context_name)
+                </a>
+            </h4>
+        </div>
+        <div id="collapse-@item.Id" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-@item.Id">
+            <div class="panel-body">
+                <div>
+                    @Html.DisplayNameFor(model => model.url): @Html.DisplayFor(modelItem => item.url)
+                </div>
+                <br />
+                <div>
+                    @Html.DisplayNameFor(model => model.method): @Html.DisplayFor(modelItem => item.method)
+                </div>
+                <br />
+                <div>
+                    @Html.DisplayNameFor(model => model.request_body): @Html.DisplayFor(modelItem => item.request_body)
+                </div>
+                <br />
+                <div>
+                    @Html.DisplayNameFor(model => model.response_code): @Html.DisplayFor(modelItem => item.response_code)
+                </div>
+                
+            </div>
+        </div>
+    </div>
+}
+
+</div>
